@@ -1,0 +1,23 @@
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formLabel {
+  display: block;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.formInput {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
