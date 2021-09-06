@@ -4,7 +4,7 @@ import { addContact } from "../../redux/contacts/contacts-operations";
 import { getAllContacts } from "../../redux/contacts/contacts-selector";
 // import shortid from "shortid";
 
-import styles from "./ContactForm.module.css";
+// import styles from "./ContactForm.module.css";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -51,10 +51,9 @@ export default function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label className={styles.formLabel}>
+        <label>
           Name
           <input
-            className={styles.formInput}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -64,10 +63,9 @@ export default function ContactForm() {
             value={name}
           />
         </label>
-        <label className={styles.formLabel}>
+        <label>
           Number
           <input
-            className={styles.formInput}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

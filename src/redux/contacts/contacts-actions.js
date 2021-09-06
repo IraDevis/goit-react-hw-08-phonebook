@@ -15,13 +15,3 @@ export const deleteContactSuccess = createAction(
   "contacts/deleteContactSuccess"
 );
 export const deleteContactError = createAction("contacts/deleteContactSuccess");
-
-// export const addContact = createAction("contacts/add", (contact) => ({
-//   payload: {
-//     id: contact.id,
-//     name: contact.name,
-//     number: contact.number,
-//   },
-// }));
-
-// export const deleteContact = createAction("contacts/delete");
