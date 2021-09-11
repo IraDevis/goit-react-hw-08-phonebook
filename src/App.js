@@ -18,7 +18,6 @@ const ContactsView = lazy(() => import("./views/ContactsView/ContactsView.js"));
 export default function App() {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
@@ -31,24 +30,24 @@ export default function App() {
           <AppBar />
 
           <Switch>
-            <PublicRoute exact path="/">
-              {isLoggedIn ? <ContactsView /> : <HomeView />}
+            <PublicRoute exact path="/" redirectTo="/contact" restricted>
+              <HomeView />
             </PublicRoute>
 
             <PublicRoute
               exact
               path="/register"
-              redirectTo="/contacts"
+              redirectTo="/contact"
               restricted
             >
               <RegisterView />
             </PublicRoute>
 
-            <PublicRoute path="/login" redirectTo="/contacts" restricted>
+            <PublicRoute path="/login" redirectTo="/contact" restricted>
               <LoginView />
             </PublicRoute>
 
-            <PrivateRoute path="/contacts">
+            <PrivateRoute path="/contact">
               <ContactsView />
             </PrivateRoute>
           </Switch>
